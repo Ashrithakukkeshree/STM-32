@@ -38,3 +38,16 @@ STOP BIT- LOW TO HIGH
 BOUD RATE - BITS PER SEC   
 
 SPRINT IS USED TO FORMAT AND STORE A STING TO VARIABLE LIKE HELLO AND 10 
+ ADC- clock,adc enable,uart(for reaing), 
+  while (1)
+  {
+    /* USER CODE END WHILE */
+	  HAL_ADC_Start(&hadc1);
+	  HAL_ADC_PollForConversion(&hadc1,100);
+	  adc_data = HAL_ADC_GetValue(&hadc1);
+	  sprintf(Uart_msg, "ADC Value : %lu\n", adc_data);
+	  HAL_UART_Transmit(&huart2,(uint8_t*)Uart_msg , strlen(Uart_msg),100);
+	  HAL_Delay(500);
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER
