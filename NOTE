@@ -51,3 +51,11 @@ SPRINT IS USED TO FORMAT AND STORE A STING TO VARIABLE LIKE HELLO AND 10
     /* USER CODE BEGIN 3 */
   }
   /* USER
+ABOVE MAIN DECLAIRATION 
+
+/* USER CODE BEGIN 4 */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypedef *hadc)
+{
+	adc_data = HAL_ADC_GetValue(&hadc1);
+}
+/* USER CODE END 4 */
